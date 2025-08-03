@@ -1,17 +1,21 @@
 {
-  "name": "Simple Linux VM",
+  "name": "Ubuntu with Chrome",
   "build": {
     "dockerfile": "Dockerfile"
   },
+  "forwardPorts": [6080],
+  "portsAttributes": {
+    "6080": {
+      "label": "Desktop GUI",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "postAttachCommand": "vnc-startup.sh",
   "customizations": {
     "vscode": {
-      "settings": {
-        "terminal.integrated.defaultProfile.linux": "bash"
-      },
+      "settings": {},
       "extensions": []
     }
   },
-  "forwardPorts": [],
-  "postCreateCommand": "uname -a",
-  "remoteUser": "root"
+  "remoteUser": "vscode"
 }
