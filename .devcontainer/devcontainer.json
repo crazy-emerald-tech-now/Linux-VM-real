@@ -1,0 +1,17 @@
+{
+  "name": "Simple Linux VM",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      },
+      "extensions": []
+    }
+  },
+  "forwardPorts": [],
+  "postCreateCommand": "uname -a",
+  "remoteUser": "root"
+}
